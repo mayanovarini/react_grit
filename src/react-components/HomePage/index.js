@@ -1,37 +1,22 @@
 import React from 'react';
 import ProductList from '../Product/ProductList';
+import Firebase from 'firebase';
 
 class HomePage extends React.Component {
   constructor() {
     super();
     this.state = {
-      productList: [
-        {
-          id: 1,
-          name: 'World traveler!',
-          link: 'https://www.facebook.com/mayanovarini',
-          media: '/img/travel.jpg',
-          upvote: 169,
-          description: 'I want to travel the world',
-          maker: {
-            name: 'Maya Novarini',
-            avatar: '/img/maya.jpg',
-          }
-        },
-        {
-          id: 2,
-          name: 'I want to build my own startup',
-          link: 'https://www.facebook.com/wulan.mantik',
-          media: '/img/startup.jpg',
-          upvote: 765,
-          description: 'A company to help people achieve their goals',
-          maker: {
-            name: 'Wulan',
-            avatar: '/img/wulan.jpg',
-          }
-        }
-      ]
+      productList: []
     }
+
+    var firebaseRef = new Firebase('https://grit.firebaseio.com/products');
+    firebaseRef.on('value', (snapshot) => {
+      var products = snapshot.val();
+
+      this.setState({
+        productList: products
+      })
+    });
   }
 
   render() {
