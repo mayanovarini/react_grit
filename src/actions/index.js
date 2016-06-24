@@ -1,5 +1,6 @@
 import alt from '../alt';
 import Firebase from 'firebase';
+import _ from 'lodash';
 
 class Actions {
   initSession(){
@@ -54,7 +55,7 @@ class Actions {
     return(dispatch) => {
       var firebaseRef = new Firebase('https://grit.firebaseio.com/products');
       firebaseRef.on('value', (snapshop) => {
-        var products = snapshop.val();
+        var products = _.values(snapshop.val());
         dispatch(products);
       });
     }
