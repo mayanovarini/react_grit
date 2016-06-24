@@ -220,6 +220,7 @@ a {
 
 .popup .popup-wrap img {
 	position: fixed;
+	margin-left: -1em;
 	top: 40px;
 	left: 40px;
 	cursor: pointer;
@@ -319,7 +320,8 @@ button:hover {
 /*------------------------------ GRIT POPUP  ------------------------------*/
 
 .product-popup {
-	width: 80%;
+	width: 93%;
+	margin-right: 2em;
 	height: 100%;
 	right: 0;
 	top: 0;
