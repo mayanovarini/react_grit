@@ -20,17 +20,18 @@ class Navbar extends React.Component {
     this.setState({popupStatus: false})
   };
 
+
+  renderLogo(){
+    return(
+      <a href="#"><img src="/img/apple32.png" style={{float: "left", paddingBottom: "12px", paddingRight: "12px"}}/></a>
+    );
+  }
+
   renderProductSearch(){
     return(
       <section className="left-side">
         <input className="product-search" placeholder="SEARCH" />
       </section>
-    );
-  }
-
-  renderLogo(){
-    return(
-      <a href="#"><img src="/img/apple32.png"/></a>
     );
   }
 
@@ -44,9 +45,9 @@ class Navbar extends React.Component {
           <section>
             <span>
               <a href="#" onClick={this.showPopup} className="login-btn">POST</a>
-              <ProfileMenu/>
+              <ProfileMenu user={this.props.user}/>
             </span>
-            <PostPopup status={this.state.popupStatus} hidePopup={this.hidePopup}/>
+            <PostPopup user={this.props.user} status={this.state.popupStatus} hidePopup={this.hidePopup}/>
 
           </section>
           :
@@ -65,8 +66,8 @@ class Navbar extends React.Component {
     return(
       <section>
         <section className="navbar">
-          {this.renderProductSearch()}
           {this.renderLogo()}
+          {this.renderProductSearch()}
           {this.renderUser()}
         </section>
       </section>

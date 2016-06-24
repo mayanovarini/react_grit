@@ -1,9 +1,22 @@
 import React from 'react';
 import Popup from './Popup';
+import Actions from '../../actions';
 
 class PostPopup extends React.Component {
   handlePost = () => {
+    var newProduct = {
+      name: this.refs.name.value,
+      link: this.refs.link.value,
+      description: this.refs.description.value,
+      media: this.refs.media.value,
+      upvote: 0,
+      maker: {
+        name: this.props.user.name,
+        avatar: this.props.user.avatar
+      }
+    }
 
+    Actions.addProduct(newProduct);
   };
 
   render(){
@@ -15,19 +28,19 @@ class PostPopup extends React.Component {
             <tbody>
               <tr>
                 <td>I want to ...</td>
-                <td><input placeholder="Write what you're planning to do. E.g. Learn how to code"/></td>
+                <td><input placeholder="Write what you're planning to do. E.g. Learn how to code" ref="name"/></td>
               </tr>
               <tr>
                 <td>Details</td>
-                <td><input placeholder="Share more with the Grit community of what is it that you want to achieve exactly"/></td>
+                <td><input placeholder="Share more with the Grit community of what is it that you want to achieve exactly" ref="description"/></td>
               </tr>
               <tr>
                 <td>Link</td>
-                <td><input placeholder="http://www..."/></td>
+                <td><input placeholder="http://www..." ref="link"/></td>
               </tr>
               <tr>
                 <td>Media</td>
-                <td><input placeholder="Paste a direct link of an image for illustration"/></td>
+                <td><input placeholder="Paste a direct link of an image for illustration" ref="media"/></td>
               </tr>
             </tbody>
           </table>

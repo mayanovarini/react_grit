@@ -1,25 +1,19 @@
 import React from 'react';
 import Popup from './Popup';
-import Firebase from 'firebase';
+import Actions from '../../actions';
 
 class LoginPopup extends React.Component {
   handleLogin = () => {
-    var firebaseRef = new Firebase('https://grit.firebaseio.com');
-    firebaseRef.authWithOAuthPopup('facebook', (error, user) => {
-      if (error) {
-        console.log('Failed!', error);
-      } else {
-        console.log('Login successfully!', user);
-      }
-    });
+    Actions.login();
+    this.props.hidePopup();
   };
 
   render() {
     return (
       <Popup {...this.props} style="login-popup">
-        <img src="/img/logo.png"/>
+        <img src="/img/logo.png" style={{marginLeft: '-5em', marginBottom: '4em'}}/>
         <h2>Login to Join The Grit Community</h2>
-        <p>The Grit is a Community to seek and share advice.</p>
+        <p style={{paddingTop: '1em'}}>The Grit is a Community to seek and share advice.</p>
         <button className="facebook-btn" onClick={this.handleLogin}>Sign in with Facebook</button>
         <p>We'll never post to Facebook without your permission.</p>
       </Popup>

@@ -1,22 +1,23 @@
 import React from 'react';
 import ProductList from '../Product/ProductList';
 import Firebase from 'firebase';
+import connectToStores from 'alt-utils/lib/connectToStores';
+import ProductStore from '../../stores/ProductStore';
+import Actions from '../../actions';
 
+@connectToStores
 class HomePage extends React.Component {
   constructor() {
     super();
-    this.state = {
-      productList: []
-    }
+    Actions.getProducts();
+  }
 
-    var firebaseRef = new Firebase('https://grit.firebaseio.com/products');
-    firebaseRef.on('value', (snapshot) => {
-      var products = snapshot.val();
+  static getStores() {
+    return [ProductStore];
+  }
 
-      this.setState({
-        productList: products
-      })
-    });
+  static getPropsFromStores(){
+    return ProductStore.getState();
   }
 
   render() {
@@ -29,9 +30,9 @@ class HomePage extends React.Component {
         <section>
           <section className="container">
             {
-              this.state.productList
+              this.props.products
               ?
-              <ProductList productList={this.state.productList}/>
+              <ProductList productList={this.props.products}/>
               :
               null
             }
