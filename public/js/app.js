@@ -39662,7 +39662,7 @@ var PostPopup = function (_React$Component) {
         _extends({}, this.props, { style: 'post-popup' }),
         _react2.default.createElement(
           'header',
-          { className: 'post-header' },
+          { className: 'post-header', style: { fontSize: '3em' } },
           'Post Your Plan'
         ),
         _react2.default.createElement(

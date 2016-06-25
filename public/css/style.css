@@ -274,11 +274,11 @@ button:hover {
 
 .post-btn {
 	color: white;
-	background-color: #5e9aee;
+	background-color: #40b5bf;
 }
 
 .post-popup .post-header {
-	background: #5e9aee;
+	background: #40b5bf;
 	color: white;
 	text-align: center;
 	padding: 20px;
@@ -371,7 +371,7 @@ button:hover {
 .product-popup header .header-shadow > section .getit-btn {
 	border-radius: 4px;
 	padding: 15px 25px;
-	background-color: #5898f1;
+	background-color: #40b5bf;
 	color: white;
 }
 

@@ -22,7 +22,7 @@ class PostPopup extends React.Component {
   render(){
     return (
       <Popup {...this.props} style="post-popup">
-        <header className="post-header">Post Your Plan</header>
+        <header className="post-header" style={{fontSize: '3em'}}>Post Your Plan</header>
         <section>
           <table>
             <tbody>
