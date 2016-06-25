@@ -40041,14 +40041,16 @@ var ProductItem = function (_React$Component) {
   _createClass(ProductItem, [{
     key: 'renderNewWindowIcon',
     value: function renderNewWindowIcon() {
+      var ReactTooltip = require("react-tooltip");
       return _react2.default.createElement(
         'a',
         { className: 'product-item-link', target: '_blank', href: this.props.link },
         _react2.default.createElement(
           'span',
           null,
-          _react2.default.createElement('i', { className: 'fa fa-lightbulb-o fa-2x', 'aria-hidden': 'true', style: { color: '#fbaf2d' } })
-        )
+          _react2.default.createElement('i', { className: 'fa fa-lightbulb-o fa-2x', 'aria-hidden': 'true', style: { color: '#fbaf2d' }, 'data-tip': 'This is my inspiration!' })
+        ),
+        _react2.default.createElement(ReactTooltip, null)
       );
     }
   }, {
@@ -40098,7 +40100,7 @@ var ProductItem = function (_React$Component) {
 
 exports.default = ProductItem;
 
-},{"./ProductPopup":205,"./Upvote":206,"react":193}],204:[function(require,module,exports){
+},{"./ProductPopup":205,"./Upvote":206,"react":193,"react-tooltip":52}],204:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

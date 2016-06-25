@@ -20,12 +20,13 @@ class ProductItem extends React.Component {
   };
 
   renderNewWindowIcon() {
+    var ReactTooltip = require("react-tooltip");
     return (
       <a className="product-item-link" target="_blank" href={this.props.link}>
         <span>
-          <i className="fa fa-lightbulb-o fa-2x" aria-hidden="true" style={{color: '#fbaf2d'}}></i>
-
+          <i className="fa fa-lightbulb-o fa-2x" aria-hidden="true" style={{color: '#fbaf2d'}} data-tip="This is my inspiration!"></i>
         </span>
+        <ReactTooltip />
       </a>
     );
   }
