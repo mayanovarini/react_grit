@@ -40043,11 +40043,11 @@ var ProductItem = function (_React$Component) {
     value: function renderNewWindowIcon() {
       return _react2.default.createElement(
         'a',
-        { className: 'product-item-link', href: this.props.link },
+        { className: 'product-item-link', target: '_blank', href: this.props.link },
         _react2.default.createElement(
           'span',
           null,
-          _react2.default.createElement('i', { className: 'fa fa-external-link', 'aria-hidden': 'true' })
+          _react2.default.createElement('i', { className: 'fa fa-lightbulb-o fa-2x', 'aria-hidden': 'true', style: { color: '#fbaf2d' } })
         )
       );
     }

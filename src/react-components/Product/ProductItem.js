@@ -19,11 +19,12 @@ class ProductItem extends React.Component {
     this.setState({productPopupStatus: false});
   };
 
-    renderNewWindowIcon() {
-      return (
-      <a className="product-item-link" href={this.props.link}>
+  renderNewWindowIcon() {
+    return (
+      <a className="product-item-link" target="_blank" href={this.props.link}>
         <span>
-          <i className="fa fa-external-link" aria-hidden="true"></i>
+          <i className="fa fa-lightbulb-o fa-2x" aria-hidden="true" style={{color: '#fbaf2d'}}></i>
+
         </span>
       </a>
     );
