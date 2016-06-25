@@ -22,7 +22,7 @@ class PostPopup extends React.Component {
   render(){
     return (
       <Popup {...this.props} style="post-popup">
-        <header className="post-header">Post Your Thought</header>
+        <header className="post-header">Post Your Plan</header>
         <section>
           <table>
             <tbody>
@@ -35,11 +35,11 @@ class PostPopup extends React.Component {
                 <td><input placeholder="Share more with the Grit community of what is it that you want to achieve exactly" ref="description"/></td>
               </tr>
               <tr>
-                <td>Link</td>
-                <td><input placeholder="http://www..." ref="link"/></td>
+                <td style={{padding: '1px'}}>Any link or reference that inspired you?</td>
+                <td><input placeholder="http://www.myinspiration.com" ref="link"/></td>
               </tr>
               <tr>
-                <td>Media</td>
+                <td>Cover</td>
                 <td><input placeholder="Paste a direct link of an image for illustration" ref="media"/></td>
               </tr>
             </tbody>

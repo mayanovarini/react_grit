@@ -230,6 +230,10 @@ a {
 	position: fixed;
 }
 
+.popup .popup-content.post-popup {
+
+}
+
 button {
 	border-radius: 20px;
 	padding: 8px 20px;
@@ -260,10 +264,12 @@ button:hover {
 /*------------------------------ POST POPUP  ------------------------------*/
 
 .post-popup {
-	width: 90%;
+	width: 95%;
+	margin-right: 2.8em;
+	padding-left: 3em;
 	right: 0;
 	top 0;
-	background-color: white;
+
 }
 
 .post-btn {

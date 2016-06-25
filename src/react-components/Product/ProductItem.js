@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductPopup from './ProductPopup';
+import Upvote from './Upvote';
 
 class ProductItem extends React.Component {
   constructor() {
@@ -18,18 +19,7 @@ class ProductItem extends React.Component {
     this.setState({productPopupStatus: false});
   };
 
-  renderUpvoteButton() {
-    return (
-      <a className="upvote-button" href="#">
-        <span>
-          <i className="fa fa-sort-asc" aria-hidden="true"></i>
-        </span>
-        {this.props.upvote}
-      </a>
-    );
-  }
-
-  renderNewWindowIcon() {
+    renderNewWindowIcon() {
       return (
       <a className="product-item-link" href={this.props.link}>
         <span>
@@ -56,11 +46,11 @@ class ProductItem extends React.Component {
   render() {
     return (
       <li className="product-item">
-        {this.renderUpvoteButton()}
+        <Upvote {...this.props} />
         <img className="product-item-media" src={this.props.media} />
         {this.renderInfoSession()}
         {this.renderNewWindowIcon()}
-        <ProductPopup status={this.state.productPopupStatus} hidePopup={this.hideProductPopup}/>
+        <ProductPopup {...this.props} status={this.state.productPopupStatus} hidePopup={this.hideProductPopup}/>
       </li>
     );
   }
